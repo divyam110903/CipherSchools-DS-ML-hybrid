@@ -183,3 +183,11 @@ print(countdown)
 countdown -=1
 print("blast")
 
+
+password = " "
+while len(password) < 8:
+    password = input("Enter password of at least 8 characters: ")
+    if len(password) < 8:
+        print("Re-enter, password too short")
+print("Accepted")
+
