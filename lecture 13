@@ -173,5 +173,13 @@ count =0
 while True:
     print(count)
     count+=1
+
     if count>5:
         break
+
+countdown =10;
+while countdown>=0:
+print(countdown)
+countdown -=1
+print("blast")
+
