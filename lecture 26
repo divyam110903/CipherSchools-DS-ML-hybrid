@@ -1,0 +1,31 @@
+import pandas as pd
+df= pd.read_csv('datacleaning.csv')
+print(df)
+
+print(df.isnull().sum())
+df.info()
+
+df_cleaned=df.dropna()
+print(df_cleaned)
+
+#fill missing
+df_filled=df.fillna({
+    'Age':df['Age'].mean(),
+    'Salary':df['Salary'].mean()
+})
+print(df_filled)
+
+# #backward fill
+# df_back=df.fillna(method='bfill')
+
+# #forward fill
+# df_for=df.fillna(method='ffill')
+
+#add duplicate
+df=pd.concat([df,df.iloc[[0]] , df.iloc[[1]]],ignore_index=True)
+print("Before removing duplicates")
+print(df)
+print("after removing duplicates")
+df_no_duplicates=df.drop_duplicates()
+print(df_no_duplicates)
+
