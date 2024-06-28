@@ -36,3 +36,18 @@ print(df_corrected)
 #convert
 df['Department']=df['Department'].str.lower()
 print(df['Department'])
+
+
+#min - MaX Normalisation  -[0,1]
+#X NORMALISATION = X - X MIN/ X MAX-X MIN
+
+df_normalised= df.copy()
+for col in ['Age','Salary']:
+    df_normalised[col]= (df[col]-df[col].min()) / (df[col].max()-df[col].min())
+
+print("original data frame")
+print(df)
+print("normalised data frame")
+print(df_normalised)
+
+
