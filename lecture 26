@@ -29,3 +29,10 @@ print("after removing duplicates")
 df_no_duplicates=df.drop_duplicates()
 print(df_no_duplicates)
 
+#replace incorrect values
+df_corrected=df.replace({'Department' : {'HR': 'Human Resource', 'IT':'Information and Technology'}})
+print(df_corrected)
+
+#convert
+df['Department']=df['Department'].str.lower()
+print(df['Department'])
