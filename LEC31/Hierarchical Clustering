@@ -1,0 +1,21 @@
+# heirarrchy in form of  trees called dendogram(node)
+#two approaches-> 
+# 1) Agglomerative - bottom up
+# 2) Divisive - top down
+
+from sklearn.datasets import make_blobs
+from sklearn.cluster import AgglomerativeClustering
+import matplotlib.pyplot as plt
+
+#generating data
+x, y = make_blobs(n_samples=300, centers=4, cluster_std=0.60,random_state=0)
+
+#train
+
+model=AgglomerativeClustering(n_clusters=4)
+y_pred=model.fit_predict(x)
+
+#plotting result
+plt.scatter(x[:,0], x[:,1],c=y_pred,cmap='rainbow')
+plt.title("Hierarchical Clustering")
+plt.show()
